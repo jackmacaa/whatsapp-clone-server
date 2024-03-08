@@ -1,21 +1,32 @@
 import express from 'express';
-import { chats } from './db';
 import cors from 'cors';
+import schema from './schema';
+import { createYoga } from 'graphql-yoga';
+import { createServer } from 'http';
+// import { ApolloServer, gql } from 'apollo-server-express';
 
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 app.get('/_ping', (_req, res) => {
   res.send('pong');
 });
 
-app.get('/chats', (_req, res) => {
-  res.json(chats);
-});
+// Implementation from tut, not working
+// const server = new ApolloServer({ schema });
+ 
+// server.applyMiddleware({
+//   app,
+//   path: '/graphql',
+// });
+
+const yoga = createYoga({ schema });
+const server = createServer(yoga);
 
 const port = process.env.PORT || 4000;
 
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+server.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}/graphql`);
 });

@@ -38,13 +38,13 @@ export const chats = [
   },
   {
     id: '3',
-    name: 'Avery Stewart',
+    name: 'Avery Spewin',
     picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg',
     lastMessage: '3',
   },
   {
     id: '4',
-    name: 'Katie Peterson',
+    name: 'Katie PatHead',
     picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg',
     lastMessage: '4',
   },
