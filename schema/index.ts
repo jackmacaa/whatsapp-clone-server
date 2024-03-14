@@ -1,4 +1,4 @@
-import { importSchema } from 'graphql-import';
+// import { importSchema } from 'graphql-import';
 import resolvers from './resolvers';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import { loadSchemaSync } from '@graphql-tools/load';
